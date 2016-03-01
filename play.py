@@ -1,7 +1,8 @@
 from random import randint
+import urllib2
 
 def hangman_game():
-	word_list = open('wordlist.txt', 'r')
+	word_list = urllib2.urlopen('http://brittanyalee.com/sample_files/wordlist.txt')
 	words = word_list.readlines()
 	number = randint(0,19)
 
@@ -43,7 +44,7 @@ def hangman_game():
 		print 'Out of guesses :('
 		print 'The word was ' + play_word
 
-	play_again = raw_input('Do you want to play again? (y/n)')
+	play_again = raw_input('Do you want to play again? (y/n) ')
 	if play_again == 'y':
 		hangman_game()
 
