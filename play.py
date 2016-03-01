@@ -43,7 +43,7 @@ def hangman_game():
 				break
 			else:
 				# if the user guessed incorrectly, they lose a try
-				'Not quite, but keep trying!'
+				print 'Not quite, but keep trying!'
 				tries-=1
 		else:
 			# if the user does not guess the word, they lose a try
