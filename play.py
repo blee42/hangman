@@ -1,12 +1,13 @@
 from random import randint
-import urllib2
+
+def sports_words():
+	return ['athletics', 'baseball', 'basketball', 'bowling', 'cycling', 'football', 'golf', 'gymnastics', 'handball', 'hockey', 'jogging', 'polo', 'rugby', 'skiing', 'soccer', 'softball', 'squash', 'swimming', 'tennis', 'volleyball']
 
 def hangman_game():
 	# choose word that the user will guess
-	word_list = urllib2.urlopen('http://brittanyalee.com/sample_files/wordlist.txt')
-	words = word_list.readlines()
-	number = randint(0,19)
-	play_word = words[number].strip()
+	words = sports_words()
+	number = randint(0,len(words)-1)
+	play_word = words[number]
 	word_length = len(play_word)
 
 	# set the number of tries the user has
